@@ -100,7 +100,7 @@ switch spec.mod
     case 'var'
         fprintf('***** Model = VAR, prior = %.2f, nlag = %d *****\n\n',spec.prior,spec.nlag);
     case 'bmm'
-        fprintf('***** Model = BMM, # of moments = %d *****\n\n',length(data.M));
+        fprintf('***** Model = BMM, mdof = %.1f, moments = %d *****\n\n',spec.mdof,length(data.M));
 end
 disp('Para             Mode')
 for k = 1:np

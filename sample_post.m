@@ -191,7 +191,7 @@ switch spec.mod
     case 'var'
         fprintf('***** Model = VAR, prior = %.2f, nlag = %d *****\n\n',spec.prior,spec.nlag);
     case 'bmm'
-        fprintf('***** Model = BMM, # of moments = %d *****\n\n',length(data.M));
+        fprintf('***** Model = BMM, mdof = %.1f, moments = %d *****\n\n',spec.mdof,length(data.M));
 end
 fprintf('Number of draws = %d after %d burn-in\n',spec.M-spec.N,spec.N);
 fprintf('Elapsed time = %s [dd:hh:mm:ss]\n\n',time);

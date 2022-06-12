@@ -94,9 +94,8 @@ D(V.YGR) = para(P.gamma_Q);
 D(V.INF) = para(P.pi_A);
 D(V.INT) = para(P.pi_A)+para(P.r_A)+4*para(P.gamma_Q);
 % Measurement covariance (comment out if no measurement error)
-Sigma_u(V.YGR) = 0.1207^2;
-Sigma_u(V.INF) = 0.2919^2;
-Sigma_u(V.INT) = 0.4476^2;
-%Sigma_u = (0.2*std(Y)').^2;
+% Sigma_u(V.YGR) = 0.1207^2;
+% Sigma_u(V.INF) = 0.2919^2;
+% Sigma_u(V.INT) = 0.4476^2;
 
 %% User Input End Here
