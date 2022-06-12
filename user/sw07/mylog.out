@@ -1,0 +1,200 @@
+Excuted on 12-Jun-2022 13:27:40
+
+***** Model = DSGE, sdof = Inf, sv = false *****
+
+Para             Mode
+varphi             5.829
+sigma_c            1.427
+h                  0.685
+xi_w               0.739
+sigma_l            1.970
+xi_p               0.693
+iota_w             0.642
+iota_p             0.293
+psi                0.646
+Phi                1.592
+r_pi               2.013
+rho                0.813
+r_y                0.091
+r_delta_y          0.221
+pi_bar             0.714
+beta_hat           0.129
+l_bar              1.589
+gamma_bar          0.415
+alpha              0.199
+rho_a              0.956
+rho_b              0.210
+rho_g              0.975
+rho_i              0.735
+rho_r              0.132
+rho_p              0.875
+rho_w              0.970
+rho_ga             0.485
+mu_p               0.704
+mu_w               0.903
+sigma_a            0.448
+sigma_b            1.798
+sigma_g            0.520
+sigma_i            0.423
+sigma_r            0.238
+sigma_p            0.128
+sigma_w            0.281
+
+Best posterior kernel found  =  -834.670
+
+Excuted on 12-Jun-2022 13:31:47
+
+***** Model = BMM, mdof = 2.1, moments = 35 *****
+
+Para             Mode
+varphi             5.207
+sigma_c            1.377
+h                  0.625
+xi_w               0.498
+sigma_l            2.027
+xi_p               0.538
+iota_w             0.506
+iota_p             0.529
+psi                0.562
+Phi                1.281
+r_pi               1.737
+rho                0.721
+r_y                0.111
+r_delta_y          0.107
+pi_bar             0.747
+beta_hat           0.193
+l_bar              2.139
+gamma_bar          0.405
+alpha              0.269
+rho_a              0.498
+rho_b              0.512
+rho_g              0.430
+rho_i              0.902
+rho_r              0.521
+rho_p              0.698
+rho_w              0.510
+rho_ga             0.508
+mu_p               0.326
+mu_w               0.490
+sigma_a            0.082
+sigma_b            0.083
+sigma_g            0.253
+sigma_i            0.217
+sigma_r            0.096
+sigma_p            0.127
+sigma_w            0.089
+
+Best posterior kernel found  =  53.217
+
+Excuted on 12-Jun-2022 14:15:53
+
+***** Model = BMM, mdof = 2.1, moments = 35 *****
+
+Number of draws = 1000 after 100 burn-in
+Elapsed time = 00:00:43:35 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+varphi             4.327         [1.495, 7.499]        24.5
+sigma_c            1.444         [1.044, 1.730]        14.4
+h                  0.679         [0.539, 0.873]        3.3
+xi_w               0.520         [0.371, 0.676]        3.1
+sigma_l            1.815         [0.624, 2.968]        2.2
+xi_p               0.523         [0.344, 0.661]        3.6
+iota_w             0.487         [0.289, 0.768]        2.7
+iota_p             0.533         [0.292, 0.771]        1.9
+psi                0.503         [0.327, 0.689]        12.3
+Phi                1.275         [1.105, 1.438]        3.9
+r_pi               1.663         [1.326, 2.009]        5.5
+rho                0.675         [0.535, 0.822]        7.7
+r_y                0.132         [0.055, 0.201]        2.5
+r_delta_y          0.119         [0.036, 0.198]        2.1
+pi_bar             0.739         [0.660, 0.813]        3.5
+beta_hat           0.230         [0.116, 0.344]        6.4
+l_bar              2.296         [1.825, 2.857]        3.6
+gamma_bar          0.407         [0.334, 0.475]        6.1
+alpha              0.262         [0.202, 0.359]        6.6
+rho_a              0.513         [0.216, 0.833]        2.5
+rho_b              0.564         [0.276, 0.920]        9.1
+rho_g              0.482         [0.151, 0.729]        2.6
+rho_i              0.691         [0.393, 0.920]        15.7
+rho_r              0.440         [0.155, 0.705]        4.2
+rho_p              0.533         [0.247, 0.856]        4.9
+rho_w              0.494         [0.195, 0.855]        2.8
+rho_ga             0.524         [0.244, 0.843]        2.3
+mu_p               0.494         [0.190, 0.807]        5.0
+mu_w               0.511         [0.234, 0.880]        2.2
+sigma_a            0.145         [0.054, 0.219]        31.6
+sigma_b            0.169         [0.047, 0.266]        22.9
+sigma_g            0.198         [0.075, 0.326]        9.7
+sigma_i            0.261         [0.069, 0.391]        13.2
+sigma_r            0.105         [0.042, 0.161]        8.4
+sigma_p            0.133         [0.047, 0.220]        8.4
+sigma_w            0.116         [0.047, 0.179]        6.8
+
+Overall rejection rate (non-sv)  =  41.0 %
+Recycle rejection rate (non-sv)  =  48.5 %
+Average number of blocks (non-sv)  =  11.6
+Average inefficiency factor (all)  =  7.5
+
+Excuted on 12-Jun-2022 14:18:04
+
+***** Model = BMM, mdof = 2.1, moments = 35 *****
+
+Para             Mode
+varphi             5.208
+sigma_c            1.374
+h                  0.625
+xi_w               0.498
+sigma_l            2.026
+xi_p               0.538
+iota_w             0.507
+iota_p             0.529
+psi                0.561
+Phi                1.281
+r_pi               1.735
+rho                0.720
+r_y                0.111
+r_delta_y          0.107
+pi_bar             0.747
+beta_hat           0.194
+l_bar              2.141
+gamma_bar          0.405
+alpha              0.269
+rho_a              0.499
+rho_b              0.513
+rho_g              0.430
+rho_i              0.902
+rho_r              0.523
+rho_p              0.698
+rho_w              0.510
+rho_ga             0.509
+mu_p               0.327
+mu_w               0.489
+sigma_a            0.082
+sigma_b            0.083
+sigma_g            0.253
+sigma_i            0.216
+sigma_r            0.096
+sigma_p            0.128
+sigma_w            0.089
+
+Best posterior kernel found  =  53.218
+
+Excuted on 12-Jun-2022 15:26:42
+
+***** Model = BMM, mdof = 2.1, moments = 35 *****
+
+Number of draws = 1000 after 100 burn-in
+Elapsed time = 00:01:08:38 [dd:hh:mm:ss]
+
+Block No.     Overall     Recycle     Indices
+Block: 1      41.1 %      49.0 %      (14,17,28,26,22,24)
+Block: 2      42.8 %      49.8 %      (5,30,11,31,1,2)
+Block: 3      40.9 %      48.2 %      (10,9,15,8,6,27)
+Block: 4      39.9 %      47.8 %      (7,21,20,19,12,34)
+Block: 5      41.8 %      47.5 %      (35,4,32,29,3,25)
+Block: 6      60.3 %      59.8 %      (13,23,18,16,33,36)
+
+Computing posterior kernel at point of evaluation...
+Log marginal likelihood  =  4.69 (n.s.e. 0.2601)
+
