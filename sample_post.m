@@ -50,30 +50,30 @@ nb1 = 0;                                    % number of overall blocks
 nb2 = 1e-3;                                 % number of recycle blocks
 next = 1;                                   % next round of randomization
 
-% DSGE t shock precision markov chain
-if ~spec.var && ~isinf(sdof)
-    chain_lamb = zeros(spec.M,T);
-end
-
-% DSGE stochastic volatility markov chain
-if ~spec.var && sv
-    chain_h = zeros(V.mod.nshock,T,spec.M); % log volatilities
-    spec.homo = false;
-    [p10,m10,v10] = mix10;
-    w = zeros(10,1);
-    mixid = repmat(randsample(10,T,true,p10)',V.mod.nshock,1);
-end
-
-% Construct VAR data matrices
-if spec.var
-    [data.Y,data.X] = DatMat(data.Y,spec.nlag);
-else
+% Model-specific setup
+if strcmp(spec.mod,'dsge')
+    % DSGE t shock precision
+    if ~isinf(sdof)
+        chain_lamb = zeros(spec.M,T);
+    end
     if ~isfield(spec,'lamb') || isinf(sdof)
         spec.lamb = ones(1,T);
+    end
+    
+    % DSGE stochastic volatility
+    if sv
+        chain_h = zeros(V.mod.nshock,T,spec.M);  % log volatilities
+        spec.homo = false;
+        [p10,m10,v10] = mix10;
+        w = zeros(10,1);
+        mixid = repmat(randsample(10,T,true,p10)',V.mod.nshock,1);
     end
     if ~isfield(spec,'h') && sv
         spec.h = repmat(P.mod.para(P.mod.svp_ss),1,T);
     end
+else
+    % Construct VAR/BMM data matrices
+    data = DatMat(data.Y,spec.mod,spec.nlag);
 end
 
 % Implement full TaRB-MH MCMC algorithm
@@ -131,7 +131,7 @@ for iter = 1:spec.M
     end
     
     % Update if DSGE with t shock or sv
-    if ~spec.var && (~isinf(sdof) || sv)
+    if strcmp(spec.mod,'dsge') && (~isinf(sdof) || sv)
         % Sample shocks & Gamma precisions
         [shock,spec.lamb] = PostShock(sdof,spec,P,V,data.Y);
         
@@ -185,10 +185,13 @@ end
 time = datestr(toc/(24*60*60),'DD:HH:MM:SS');
 diary([spec.savepath filesep 'mylog.out']); % save screen
 fprintf('Excuted on %s\n\n',char(datetime));
-if spec.var
-    fprintf('***** Model = VAR, prior = %.2f, nlag = %d *****\n\n',spec.prior,spec.nlag);
-else
-    fprintf('***** Model = DSGE, sdof = %.1f, sv = %s *****\n\n',sdof,string(sv));
+switch spec.mod
+    case 'dsge'
+        fprintf('***** Model = DSGE, sdof = %.1f, sv = %s *****\n\n',sdof,string(sv));
+    case 'var'
+        fprintf('***** Model = VAR, prior = %.2f, nlag = %d *****\n\n',spec.prior,spec.nlag);
+    case 'bmm'
+        fprintf('***** Model = BMM, # of moments = %d *****\n\n',length(data.M));
 end
 fprintf('Number of draws = %d after %d burn-in\n',spec.M-spec.N,spec.N);
 fprintf('Elapsed time = %s [dd:hh:mm:ss]\n\n',time);
@@ -201,13 +204,15 @@ fprintf('Elapsed time = %s [dd:hh:mm:ss]\n\n',time);
 M = spec.M-spec.N;
 chain_para = chain_para((spec.N+1):end,:);
 save([spec.savepath filesep 'tarb_full.mat'],'chain_para');
-if ~spec.var && ~isinf(sdof)
-    chain_lamb = chain_lamb((spec.N+1):end,:);
-    save([spec.savepath filesep 'tarb_full.mat'],'chain_lamb','-append');
-end
-if ~spec.var && sv
-    chain_h = chain_h(:,:,(spec.N+1):end);
-    save([spec.savepath filesep 'tarb_full.mat'],'chain_h','-append');
+if strcmp(spec.mod,'dsge')
+    if ~isinf(sdof)
+        chain_lamb = chain_lamb((spec.N+1):end,:);
+        save([spec.savepath filesep 'tarb_full.mat'],'chain_lamb','-append');
+    end
+    if sv
+        chain_h = chain_h(:,:,(spec.N+1):end);
+        save([spec.savepath filesep 'tarb_full.mat'],'chain_h','-append');
+    end
 end
 
 % Compute posterior statistics
@@ -222,12 +227,12 @@ save([spec.savepath filesep 'tarb_full.mat'],'stat','-append');
 DiagPlot(chain_para,P.mod.name,spec.savepath)
 
 % Sample posterior VAR parameters
-if spec.var
+if strcmp(spec.mod,'var')
     PostVAR(spec.prior,spec.nlag,data,spec.savepath)
 end
 
 % Sample predictive data
-if ~spec.var && spec.pred>0
+if strcmp(spec.mod,'dsge') && spec.pred>0
     PostPred(spec.pred,sdof,data.Y,spec.savepath)
 end
 

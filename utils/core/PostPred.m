@@ -24,7 +24,7 @@ function PostPred(h,sdof,Y,savepath)
 % Initialization
 load([savepath filesep 'tarb_full.mat'])    %#ok<LOAD> load MCMC draws
 [P,V] = ParVar;                             % load parameters & variables
-M = size(chain_para,1);                     %#ok<NODEF> number of post draws
+M = size(chain_para,1);                     %#ok<USENS> % number of post draws
 [T,n] = size(Y);                            % time span & number of observables
 data_h = zeros(h,n,M);                      % predictive data
 

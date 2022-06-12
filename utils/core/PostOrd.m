@@ -46,17 +46,18 @@ nb1 = 0;                                    % number of overall blocks
 nb2 = 1e-3;                                 % number of recycle blocks
 next = 1;                                   % next round of randomization
 
-% DSGE stochastic volatility
-if ~spec.var && sv
-    spec.homo = false;
-    [p10,m10,v10] = mix10;
-    w = zeros(10,1);
-    mixid = repmat(randsample(10,T,true,p10)',V.mod.nshock,1);
-end
-
-% Construct VAR data matrices
-if spec.var
-    [data.Y,data.X] = DatMat(data.Y,spec.nlag);
+% Model-specific setup
+if strcmp(spec.mod,'dsge')
+    % DSGE stochastic volatility
+    if sv
+        spec.homo = false;
+        [p10,m10,v10] = mix10;
+        w = zeros(10,1);
+        mixid = repmat(randsample(10,T,true,p10)',V.mod.nshock,1);
+    end
+else
+    % Construct VAR/BMM data matrices
+    data = DatMat(data.Y,spec.mod,spec.nlag);
 end
 
 % Implement reduced TaRB-MH MCMC algorithm
@@ -140,7 +141,7 @@ for iter = 1:spec.M
     end
     
     % Update if DSGE with t shock or sv
-    if ~spec.var && (~isinf(sdof) || sv)
+    if strcmp(spec.mod,'dsge') && (~isinf(sdof) || sv)
         % Sample shocks & Gamma precisions
         [shock,spec.lamb] = PostShock(sdof,spec,P,V,data.Y);
         

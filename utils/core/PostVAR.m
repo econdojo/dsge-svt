@@ -28,7 +28,7 @@ M = size(chain_para,1);           % number of post draws
 [T,n] = size(data.Y);             % time span & number of data variables
 k = 1+n*nlag;                     % number of regressors
 Phi = zeros(k,n,M);               % VAR matrix coefficients
-Sigma_u = zeros(n,n,M);           % VAR innovation matrix
+Sig_u = zeros(n,n,M);             % VAR innovation matrix
 
 % Sample posterior VAR parameters
 progressbar('VAR Posterior Sampling in Progress')
@@ -69,13 +69,13 @@ for iter = 1:M
     % VAR posterior
     if isinf(prior)               % VAR subject to DSGE restrictions
         Phi(:,:,iter) = E_xx\E_yx';
-        Sigma_u(:,:,iter) = E_yy_k(:,:,1)-E_yx*Phi(:,:,iter);
+        Sig_u(:,:,iter) = E_yy_k(:,:,1)-E_yx*Phi(:,:,iter);
     else
         Phi_post = (prior*T*E_xx+data.X'*data.X)\(prior*T*E_yx'+data.X'*data.Y);
         E_uu_post = (prior*T*E_yy_k(:,:,1)+data.Y'*data.Y-(prior*T*E_yx+data.Y'*data.X)*Phi_post)/((prior+1)*T);
         R = cholmod(E_uu_post); E_uu_post = R'*R;
-        Sigma_u(:,:,iter) = iwishrnd((prior+1)*T*E_uu_post,(prior+1)*T-k);
-        Phi(:,:,iter) = reshape(mvt_rnd(reshape(Phi_post,k*n,1)',kron(Sigma_u(:,:,iter),inv(prior*T*E_xx+data.X'*data.X)),Inf,1)',k,n);
+        Sig_u(:,:,iter) = iwishrnd((prior+1)*T*E_uu_post,(prior+1)*T-k);
+        Phi(:,:,iter) = reshape(mvt_rnd(reshape(Phi_post,k*n,1)',kron(Sig_u(:,:,iter),inv(prior*T*E_xx+data.X'*data.X)),Inf,1)',k,n);
     end
     progressbar(iter/M)
 end

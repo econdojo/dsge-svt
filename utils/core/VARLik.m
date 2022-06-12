@@ -1,11 +1,11 @@
-function loglik = LogLik(SSR,prior,nlag,data)
-% Function LOGLIK
+function loglik = VARLik(SSR,prior,nlag,data)
+% Function VARLIK
 %
 % Purpose:    Evaluate DSGE log marginal likelihood; see
 %             Del Negro & Schorfheide (2004), Priors from general equilibrium
 %             models for VARs, International Economic Review
 %
-% Format:     loglik = LogLik(SSR,prior,nlag,data)
+% Format:     loglik = VARLik(SSR,prior,nlag,data)
 %
 % Input:      SSR       state space representation (structure)
 %

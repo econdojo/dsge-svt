@@ -18,22 +18,22 @@
 
 % ss indices
 % constant volatility
-% svp_ss(V.eps_R) = P.sigma_R;
-% svp_ss(V.eps_G) = P.sigma_G;
-% svp_ss(V.eps_Z) = P.sigma_Z;
+svp_ss(V.eps_R) = P.sigma_R;
+svp_ss(V.eps_G) = P.sigma_G;
+svp_ss(V.eps_Z) = P.sigma_Z;
 % stochastic volatility
-svp_ss(V.eps_R) = P.mu_R;
-svp_ss(V.eps_G) = P.mu_G;
-svp_ss(V.eps_Z) = P.mu_Z;
+% svp_ss(V.eps_R) = P.mu_R;
+% svp_ss(V.eps_G) = P.mu_G;
+% svp_ss(V.eps_Z) = P.mu_Z;
 
 % ar indices
-svp_ar(V.eps_R) = P.phi_R;
-svp_ar(V.eps_G) = P.phi_G;
-svp_ar(V.eps_Z) = P.phi_Z;
+% svp_ar(V.eps_R) = P.phi_R;
+% svp_ar(V.eps_G) = P.phi_G;
+% svp_ar(V.eps_Z) = P.phi_Z;
 
 % vv indices
-svp_vv(V.eps_R) = P.sig2_R;
-svp_vv(V.eps_G) = P.sig2_G;
-svp_vv(V.eps_Z) = P.sig2_Z;
+% svp_vv(V.eps_R) = P.sig2_R;
+% svp_vv(V.eps_G) = P.sig2_G;
+% svp_vv(V.eps_Z) = P.sig2_Z;
 
 %% User Input End Here

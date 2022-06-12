@@ -32,14 +32,12 @@ elseif spec.nopt<1
     error('Number of optimizations < 1.')
 elseif sdof<=2
     error('Student-t degrees of freedom <= 2.')
-elseif spec.prior<(1+n*spec.nlag+n)/(T-spec.nlag) && spec.var
+elseif spec.prior<(1+n*spec.nlag+n)/(T-spec.nlag) && strcmp(spec.mod,'var')
     error('DSGE prior weight < lower bound.')
 end
 
-% Model specification
-if spec.var
-    [data.Y,data.X] = DatMat(data.Y,spec.nlag);
-else
+% Model-specific setup
+if strcmp(spec.mod,'dsge')
     % Optimize under homoscedastic Gaussian shock
     if ~isfield(spec,'lamb') || isinf(sdof)
         spec.lamb = ones(1,T);
@@ -50,6 +48,9 @@ else
     else
         spec.homo = false;
     end
+else
+    % Construct VAR/BMM data matrices
+    data = DatMat(data.Y,spec.mod,spec.nlag);
 end
 
 % Re-optimization
@@ -93,10 +94,13 @@ R = cholmod(Hopt); Hopt = R'*R;
 clc
 diary([spec.savepath filesep 'mylog.out']); % save screen
 fprintf('Excuted on %s\n\n',char(datetime));
-if spec.var
-    fprintf('***** Model = VAR, prior = %.2f, nlag = %d *****\n\n',spec.prior,spec.nlag);
-else
-    fprintf('***** Model = DSGE, sdof = %.1f, sv = %s *****\n\n',sdof,string(sv));
+switch spec.mod
+    case 'dsge'
+        fprintf('***** Model = DSGE, sdof = %.1f, sv = %s *****\n\n',sdof,string(sv));
+    case 'var'
+        fprintf('***** Model = VAR, prior = %.2f, nlag = %d *****\n\n',spec.prior,spec.nlag);
+    case 'bmm'
+        fprintf('***** Model = BMM, # of moments = %d *****\n\n',length(data.M));
 end
 disp('Para             Mode')
 for k = 1:np

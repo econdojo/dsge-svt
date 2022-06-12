@@ -66,16 +66,17 @@ if P.mod.ncvp/nb>10
     error('Number of blocks is too small.')
 end
 
-% Construct VAR data matrices
-if spec.var
-    [data.Y,data.X] = DatMat(data.Y,spec.nlag);
-else
+% Model-specific setup
+if strcmp(spec.mod,'dsge')
     if ~isfield(spec,'lamb') || isinf(spec.sdof)
         spec.lamb = ones(1,T);
     end
     if ~isfield(spec,'h') && spec.sv
         spec.h = repmat(P.mod.para(P.mod.svp_ss),1,T);
     end
+else
+    % Construct VAR/BMM data matrices
+    data = DatMat(data.Y,spec.mod,spec.nlag);
 end
 
 % Implement reduced TaRB-MH MCMC algorithm
@@ -108,10 +109,13 @@ fprintf('\n');
 total = datestr(toc/(24*60*60),'DD:HH:MM:SS');
 diary([spec.savepath filesep 'mylog.out']); % save screen
 fprintf('Excuted on %s\n\n',char(datetime));
-if spec.var
-    fprintf('***** Model = VAR, prior = %.2f, nlag = %d *****\n\n',spec.prior,spec.nlag);
-else
-    fprintf('***** Model = DSGE, sdof = %.1f, sv = %s *****\n\n',spec.sdof,string(spec.sv));
+switch spec.mod
+    case 'dsge'
+        fprintf('***** Model = DSGE, sdof = %.1f, sv = %s *****\n\n',spec.sdof,string(spec.sv));
+    case 'var'
+        fprintf('***** Model = VAR, prior = %.2f, nlag = %d *****\n\n',spec.prior,spec.nlag);
+    case 'bmm'
+        fprintf('***** Model = BMM, # of moments = %d *****\n\n',length(data.M));
 end
 fprintf('Number of draws = %d after %d burn-in\n',spec.M-spec.N,spec.N);
 fprintf('Elapsed time = %s [dd:hh:mm:ss]\n\n',total);

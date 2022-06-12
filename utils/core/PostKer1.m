@@ -37,7 +37,6 @@ else
     Sigma_u = zeros(V.mod.ndata,1);
     Z = zeros(V.mod.ndata,V.mod.nvar);
     D = zeros(V.mod.ndata,1);
-    Y = data.Y; %#ok<NASGU>
     ssp = zeros(P.mod.nssp,1); %#ok<NASGU>
     j = 0; %#ok<NASGU>
     user_ssp
@@ -58,38 +57,44 @@ if any(eu-1)
     return
 else
     % Choose model type
-    if spec.var
-        % DSGE log marginal likelihood
-        loglik = LogLik(SSR,spec.prior,spec.nlag,data);
-    else
-        % Stochastic volatility
-        T = length(spec.lamb);
-        SSR.sdof = spec.sdof;
-        SSR.sv = spec.sv;
-        if isempty(P.mod.svp)
-            Sigma_e = para(P.mod.svp_ss).^2;
-            SSR.Sigma_e = repmat(Sigma_e,1,T)./repmat(spec.lamb,V.mod.nshock,1);
-            SSR.Sigma_v = zeros(V.mod.nshock,1);
-            SSR.B = zeros(V.mod.nshock);
-            SSR.A = zeros(V.mod.nshock,1);
-        else
-            Sigma_e = exp(para(P.mod.svp_ss));
-            if SSR.sv || spec.homo
-                SSR.Sigma_e = repmat(Sigma_e,1,T);
+    switch spec.mod
+        case 'dsge'
+            % Stochastic volatility
+            T = length(spec.lamb);
+            SSR.sdof = spec.sdof;
+            SSR.sv = spec.sv;
+            if isempty(P.mod.svp)
+                Sigma_e = para(P.mod.svp_ss).^2;
+                SSR.Sigma_e = repmat(Sigma_e,1,T)./repmat(spec.lamb,V.mod.nshock,1);
+                SSR.Sigma_v = zeros(V.mod.nshock,1);
+                SSR.B = zeros(V.mod.nshock);
+                SSR.A = zeros(V.mod.nshock,1);
             else
-                SSR.Sigma_e = exp(spec.h)./repmat(spec.lamb,V.mod.nshock,1);
+                Sigma_e = exp(para(P.mod.svp_ss));
+                if SSR.sv || spec.homo
+                    SSR.Sigma_e = repmat(Sigma_e,1,T);
+                else
+                    SSR.Sigma_e = exp(spec.h)./repmat(spec.lamb,V.mod.nshock,1);
+                end
+                SSR.Sigma_v = para(P.mod.svp_vv);
+                SSR.B = diag(para(P.mod.svp_ar));
+                SSR.A = (eye(V.mod.nshock)-SSR.B)*para(P.mod.svp_ss);
             end
-            SSR.Sigma_v = para(P.mod.svp_vv);
-            SSR.B = diag(para(P.mod.svp_ar));
-            SSR.A = (eye(V.mod.nshock)-SSR.B)*para(P.mod.svp_ss);
-        end
-        
-        % Conventional/mixture Kalman filter
-        fs = (eye(V.mod.nvar)-SSR.G)\SSR.C;
-        Omega_fs = dlyap_sym(SSR.G,SSR.M*diag(Sigma_e)*SSR.M',1);
-        N = 1000*V.mod.nshock;
-        [~,~,loglik] = MixKalman_mex(data.Y,SSR,fs,Omega_fs,N);
-        loglik = loglik(spec.init+1:end);    % condition on initial observations
+
+            % Conventional/mixture Kalman filter
+            fs = (eye(V.mod.nvar)-SSR.G)\SSR.C;
+            Omega_fs = dlyap_sym(SSR.G,SSR.M*diag(Sigma_e)*SSR.M',1);
+            N = 1000*V.mod.nshock;
+            [~,~,loglik] = MixKalman_mex(data.Y,SSR,fs,Omega_fs,N);
+            loglik = loglik(spec.init+1:end);    % condition on initial observations
+        case 'var'
+            % DSGE log marginal likelihood
+            SSR.Sigma_e = para(P.mod.svp_ss).^2;
+            loglik = VARLik(SSR,spec.prior,spec.nlag,data);
+        case 'bmm'
+            % BMM log pseudo-likelihood
+            SSR.Sigma_e = para(P.mod.svp_ss).^2;
+            loglik = BMMLik(SSR,spec.nlag,spec.mdof,para,data);
     end
     
     % Compute (-)log posterior kernel density

@@ -12,14 +12,15 @@ function spec = tarb(fun,spec,varargin)
 %                       @marg_lik
 %             spec      current TaRB-MH specification (structure)
 %             varargin  (optional) string/value pair
+%                       'mod'      - model type ('dsge')
 %                       'sdof'     - DSGE: shock t degrees of freedom (Inf)
 %                       'lamb'     - DSGE: t shock gamma precisions (1's)
 %                       'h'        - DSGE: log-dev volatilities (0's)
 %                       'pred'     - DSGE: forecasting horizon (0)
 %                       'init'     - DSGE: number of initial observations to condition (0)
-%                       'var'      - DSGE-VAR (false)
 %                       'prior'    - VAR: DSGE prior weight (0.50)
-%                       'nlag'     - VAR: number of VAR lags (4)
+%                       'nlag'     - VAR/BMM: number of lags (4)
+%                       'mdof'     - BMM: kernel t degrees of freedom (5)
 %                       'tune'     - optimization tuning parameter (0)
 %                       'npd'      - number of prior draws (1000)
 %                       'nopt'     - number of optimizations (1)
@@ -64,9 +65,10 @@ if isempty(spec)
     spec.sdof = Inf;
     spec.pred = 0;
     spec.init = 0;
-    spec.var = false;
+    spec.mod = 'dsge';
     spec.prior = 0.5;
     spec.nlag = 4;
+    spec.mdof = 5;
     spec.chi = 0;
     spec.npd = 1000;
     spec.nopt = 1;
@@ -98,9 +100,10 @@ for k = 1:2:narg
         case 'h', spec.h = varargin{k+1};
         case 'pred', spec.pred = varargin{k+1};
         case 'init', spec.init = varargin{k+1};
-        case 'var', spec.var = varargin{k+1};
+        case 'mod', spec.mod = varargin{k+1};
         case 'prior', spec.prior = varargin{k+1};
         case 'nlag', spec.nlag = varargin{k+1};
+        case 'mdof', spec.mdof = varargin{k+1};
         case 'tune', spec.chi = varargin{k+1};
         case 'npd', spec.npd = varargin{k+1};
         case 'nopt', spec.nopt = varargin{k+1};
