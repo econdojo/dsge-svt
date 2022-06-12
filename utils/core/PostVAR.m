@@ -80,6 +80,6 @@ for iter = 1:M
     progressbar(iter/M)
 end
 
-save([savepath filesep 'tarb_full.mat'],'Phi','Sigma_u','-append');
+save([savepath filesep 'tarb_full.mat'],'Phi','Sig_u','-append');
 
 %-------------------- END --------------------
