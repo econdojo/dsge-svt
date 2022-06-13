@@ -9,9 +9,9 @@ end
 %% User search path & mex files
 modpath = ['user' filesep 'sw07'];
 datpath = ['user' filesep 'sw07' filesep 'data_661to044.txt'];
-savepath = ['user' filesep 'sw07' filesep num2str(index)];
+savepath = ['user' filesep 'sw07' filesep mod];
 sw07 = tarb(@tarb_spec,[],'modpath',modpath,'datpath',datpath,'savepath',savepath);  % TaRB specification
-OneFileToMexThemAll
+%OneFileToMexThemAll
 
 %% Sample prior
 sdof = Inf;        % shock degrees of freedom
@@ -33,8 +33,9 @@ npd = 100;         % number of prior draws to initialize mode search
 nopt = 2;          % number of mode searches
 p = 0.7;           % blocking probability
 w = 0.5;           % tailoring frequency
-M = 11000;         % number of draws including burn-in
-N = 1000;          % number of burn-in
+M = 1100;         % number of draws including burn-in
+N = 100;          % number of burn-in
+mod = 'bmm';
 mdof = 2.1;
 nlag = 1;
 sw07 = tarb(@tarb_spec,sw07,'sa',sa_spec,'cs',cs_spec,'npd',npd,'nopt',nopt,'prob',p,'freq',w,'draws',M,'burn',N,'mod',mod,'mdof',mdof,'nlag',nlag);
