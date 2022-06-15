@@ -4,7 +4,7 @@
 #SBATCH --nodes=5               # node count
 #SBATCH --ntasks=5              # total number of tasks across all nodes
 #SBATCH --cpus-per-task=12       # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --time=20:00:00       # total run time limit (HH:MM:SS)
+#SBATCH --time=50:00:00       # total run time limit (HH:MM:SS)
 #SBATCH --mail-type=all          # send email on job start, end and fault
 #SBATCH --mail-user=fei.tan@slu.edu
 

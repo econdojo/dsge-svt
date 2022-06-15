@@ -1,0 +1,182 @@
+Excuted on 12-Jun-2022 19:12:55
+
+***** Model = DSGE, sdof = Inf, sv = false *****
+
+Para             Mode
+varphi             5.826
+sigma_c            1.427
+h                  0.685
+xi_w               0.739
+sigma_l            1.970
+xi_p               0.693
+iota_w             0.642
+iota_p             0.293
+psi                0.646
+Phi                1.592
+r_pi               2.013
+rho                0.813
+r_y                0.091
+r_delta_y          0.221
+pi_bar             0.714
+beta_hat           0.129
+l_bar              1.592
+gamma_bar          0.415
+alpha              0.199
+rho_a              0.956
+rho_b              0.210
+rho_g              0.975
+rho_i              0.735
+rho_r              0.132
+rho_p              0.875
+rho_w              0.970
+rho_ga             0.485
+mu_p               0.704
+mu_w               0.903
+sigma_a            0.448
+sigma_b            1.798
+sigma_g            0.520
+sigma_i            0.423
+sigma_r            0.238
+sigma_p            0.128
+sigma_w            0.281
+
+Best posterior kernel found  =  -834.670
+
+Excuted on 12-Jun-2022 19:49:55
+
+***** Model = DSGE, sdof = Inf, sv = false *****
+
+Para             Mode
+varphi             5.832
+sigma_c            1.427
+h                  0.685
+xi_w               0.739
+sigma_l            1.970
+xi_p               0.693
+iota_w             0.642
+iota_p             0.293
+psi                0.646
+Phi                1.592
+r_pi               2.013
+rho                0.813
+r_y                0.091
+r_delta_y          0.221
+pi_bar             0.714
+beta_hat           0.129
+l_bar              1.587
+gamma_bar          0.415
+alpha              0.199
+rho_a              0.956
+rho_b              0.210
+rho_g              0.975
+rho_i              0.735
+rho_r              0.132
+rho_p              0.875
+rho_w              0.970
+rho_ga             0.485
+mu_p               0.704
+mu_w               0.903
+sigma_a            0.448
+sigma_b            1.798
+sigma_g            0.520
+sigma_i            0.423
+sigma_r            0.238
+sigma_p            0.128
+sigma_w            0.281
+
+Best posterior kernel found  =  -834.670
+
+Excuted on 13-Jun-2022 09:39:11
+
+***** Model = DSGE, sdof = Inf, sv = false *****
+
+Number of draws = 10000 after 1000 burn-in
+Elapsed time = 00:13:48:45 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+varphi             6.010         [4.391, 7.688]        5.8
+sigma_c            1.402         [1.194, 1.597]        11.1
+h                  0.689         [0.622, 0.759]        24.0
+xi_w               0.714         [0.616, 0.814]        21.8
+sigma_l            1.941         [1.067, 2.811]        8.0
+xi_p               0.690         [0.612, 0.772]        11.3
+iota_w             0.620         [0.420, 0.817]        2.2
+iota_p             0.321         [0.155, 0.486]        8.9
+psi                0.650         [0.539, 0.756]        4.8
+Phi                1.591         [1.466, 1.709]        3.5
+r_pi               2.037         [1.741, 2.304]        8.0
+rho                0.809         [0.767, 0.846]        10.3
+r_y                0.094         [0.056, 0.133]        10.7
+r_delta_y          0.223         [0.178, 0.266]        3.9
+pi_bar             0.730         [0.562, 0.895]        2.5
+beta_hat           0.149         [0.068, 0.228]        2.1
+l_bar              1.428         [-0.251, 2.948]        2.8
+gamma_bar          0.413         [0.382, 0.440]        6.4
+alpha              0.198         [0.167, 0.229]        3.8
+rho_a              0.954         [0.933, 0.973]        3.7
+rho_b              0.249         [0.091, 0.394]        15.1
+rho_g              0.975         [0.961, 0.990]        4.3
+rho_i              0.742         [0.652, 0.836]        9.2
+rho_r              0.155         [0.049, 0.256]        3.0
+rho_p              0.861         [0.783, 0.939]        22.0
+rho_w              0.964         [0.943, 0.987]        16.1
+rho_ga             0.483         [0.329, 0.630]        1.5
+mu_p               0.673         [0.524, 0.833]        26.9
+mu_w               0.866         [0.791, 0.949]        22.5
+sigma_a            0.455         [0.407, 0.500]        2.3
+sigma_b            1.798         [1.235, 2.333]        23.8
+sigma_g            0.527         [0.475, 0.573]        1.7
+sigma_i            0.425         [0.355, 0.485]        7.3
+sigma_r            0.243         [0.219, 0.267]        2.3
+sigma_p            0.129         [0.107, 0.155]        10.8
+sigma_w            0.277         [0.241, 0.318]        8.0
+
+Overall rejection rate (non-sv)  =  31.1 %
+Recycle rejection rate (non-sv)  =  43.6 %
+Average number of blocks (non-sv)  =  11.5
+Average inefficiency factor (all)  =  9.2
+
+Excuted on 13-Jun-2022 09:43:49
+
+***** Model = DSGE, sdof = Inf, sv = false *****
+
+Para             Mode
+varphi             5.830
+sigma_c            1.427
+h                  0.685
+xi_w               0.739
+sigma_l            1.970
+xi_p               0.693
+iota_w             0.642
+iota_p             0.293
+psi                0.646
+Phi                1.592
+r_pi               2.013
+rho                0.813
+r_y                0.091
+r_delta_y          0.221
+pi_bar             0.714
+beta_hat           0.129
+l_bar              1.586
+gamma_bar          0.415
+alpha              0.199
+rho_a              0.956
+rho_b              0.210
+rho_g              0.975
+rho_i              0.735
+rho_r              0.132
+rho_p              0.875
+rho_w              0.970
+rho_ga             0.485
+mu_p               0.704
+mu_w               0.903
+sigma_a            0.448
+sigma_b            1.798
+sigma_g            0.520
+sigma_i            0.423
+sigma_r            0.238
+sigma_p            0.128
+sigma_w            0.281
+
+Best posterior kernel found  =  -834.670
+

@@ -11,7 +11,7 @@ modpath = ['user' filesep 'sw07'];
 datpath = ['user' filesep 'sw07' filesep 'data_661to044.txt'];
 savepath = ['user' filesep 'sw07' filesep num2str(index)];
 sw07 = tarb(@tarb_spec,[],'modpath',modpath,'datpath',datpath,'savepath',savepath);  % TaRB specification
-OneFileToMexThemAll
+% OneFileToMexThemAll
 
 %% Sample prior
 sdof = Inf;        % shock degrees of freedom
@@ -31,7 +31,7 @@ sa_spec = optimoptions(@simulannealbnd,...  % simulated annealing
 cs_spec = {[],1e-3,100,true}; % csminwel
 npd = 100;         % number of prior draws to initialize mode search
 nopt = 2;          % number of mode searches
-p = 0.7;           % blocking probability
+p = 0.8;           % blocking probability
 w = 0.5;           % tailoring frequency
 M = 11000;         % number of draws including burn-in
 N = 1000;          % number of burn-in
