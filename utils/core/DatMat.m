@@ -30,19 +30,19 @@ switch mod
     case 'bmm'
         [P,V] = ParVar;                %#ok<ASGLU> parameter & variable indices
         n = size(Y,2);                 % number of observables
-        E_y = NaN(n,1);                % 1st-order moments
-        E_yy = NaN(n,n,nlag+1);        % 2nd-order raw moments
+        E_y = zeros(n,1)-1;            % 1st-order moments
+        E_yy = zeros(n,n,nlag+1)-1;    % 2nd-order raw moments
         user_bmm
         M = [];
         for k = 1:n
-            if ~isnan(E_y(k))
+            if E_y(k)>=0
                 M = cat(2,M,Y(nlag+1:end,k));
             end
         end
         for k = 1:nlag+1
             for i = 1:n
                 for j = 1:n
-                    if ~isnan(E_yy(i,j,k))
+                    if E_yy(i,j,k)>=0
                         M = cat(2,M,Y(nlag+1:end,i).*Y(nlag+2-k:end+1-k,j));
                     end
                 end

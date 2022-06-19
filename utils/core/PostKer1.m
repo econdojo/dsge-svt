@@ -94,7 +94,8 @@ else
         case 'bmm'
             % BMM log pseudo-likelihood
             SSR.Sigma_e = para(P.mod.svp_ss).^2;
-            loglik = BMMLik(SSR,spec.nlag,spec.mdof,para,data);
+            [E_y,E_yy] = Moment(SSR,spec.nlag);
+            loglik = BMMLik_mex(E_y,E_yy,spec.mdof,para,data);
     end
     
     % Compute (-)log posterior kernel density

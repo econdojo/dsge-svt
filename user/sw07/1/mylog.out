@@ -180,3 +180,47 @@ sigma_w            0.281
 
 Best posterior kernel found  =  -834.670
 
+Excuted on 14-Jun-2022 19:43:52
+
+***** Model = DSGE, sdof = Inf, sv = false *****
+
+Para             Mode
+varphi             5.814
+sigma_c            1.428
+h                  0.685
+xi_w               0.739
+sigma_l            1.970
+xi_p               0.693
+iota_w             0.642
+iota_p             0.293
+psi                0.646
+Phi                1.592
+r_pi               2.014
+rho                0.813
+r_y                0.091
+r_delta_y          0.221
+pi_bar             0.713
+beta_hat           0.129
+l_bar              1.602
+gamma_bar          0.415
+alpha              0.199
+rho_a              0.956
+rho_b              0.210
+rho_g              0.975
+rho_i              0.736
+rho_r              0.132
+rho_p              0.875
+rho_w              0.970
+rho_ga             0.485
+mu_p               0.704
+mu_w               0.903
+sigma_a            0.448
+sigma_b            1.796
+sigma_g            0.520
+sigma_i            0.423
+sigma_r            0.238
+sigma_p            0.128
+sigma_w            0.281
+
+Best posterior kernel found  =  -834.670
+

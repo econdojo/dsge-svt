@@ -1,4 +1,4 @@
-function test_bmm(index) % cluster use
+function sw07_bmm(index) % cluster use
 
 if index==1
     mod = 'dsge';
@@ -35,7 +35,7 @@ p = 0.8;           % blocking probability
 w = 0.5;           % tailoring frequency
 M = 11000;         % number of draws including burn-in
 N = 1000;          % number of burn-in
-mdof = 2.1;
+mdof = 5;
 nlag = 1;
 sw07 = tarb(@tarb_spec,sw07,'sa',sa_spec,'cs',cs_spec,'npd',npd,'nopt',nopt,'prob',p,'freq',w,'draws',M,'burn',N,'mod',mod,'mdof',mdof,'nlag',nlag);
 tarb(@sample_post,sw07);

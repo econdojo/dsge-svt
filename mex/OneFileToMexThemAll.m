@@ -4,6 +4,8 @@ nvar = 100;
 nshock = 20;
 ndata = 20;
 period = 300;
+nlag = 4;
+nmmt = 100;
 
 %% Input types
 x = coder.typeof(0,[1 npara],[false true]);
@@ -51,6 +53,14 @@ R = coder.typeof(0,[1 period],[false true]);
 draw_S = coder.typeof(true);
 draw_R = coder.typeof(true);
 
+E_y = coder.typeof(0,[ndata 1],[true false]);
+E_yy = coder.typeof(0,[ndata ndata nlag+1],[true true true]);
+para = coder.typeof(0,[npara 1],[true false]);
+data.M = coder.typeof(0,[1 nmmt],[false true]);
+data.V = coder.typeof(0,[nmmt nmmt],[true true]);
+data.E_y = coder.typeof(0,[ndata 1],[true false]);
+data.E_yy = coder.typeof(0,[ndata ndata nlag+1],[true true true]);
+
 %% mvt_rnd.m
 fprintf('Generating mvt_rnd_mex... ');
 codegen -d mex mvt_rnd -args {mu,Sigma,v,N}
@@ -87,9 +97,9 @@ codegen -d mex SimuData -args {SSR,T,state,log_vol}
 movefile SimuData_mex* mex
 fprintf('Done!\n');
 
-%% DistSmoother.m
-fprintf('Generating DistSmoother_mex... ');
-codegen -d mex DistSmoother -args {Y,SSR,fs_init,Omega_fs_init}
-movefile DistSmoother_mex* mex
+%% BMMLik.m
+fprintf('Generating BMMLik_mex... ');
+codegen -d mex BMMLik -args {E_y,E_yy,v,para,data}
+movefile BMMLik_mex* mex
 fprintf('Done!\n');
 rmdir(['mex' filesep 'interface'],'s')

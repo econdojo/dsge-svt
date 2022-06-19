@@ -136,3 +136,273 @@ sigma_w            0.059
 
 Best posterior kernel found  =  144.167
 
+Excuted on 14-Jun-2022 19:37:13
+
+***** Model = BMM, mdof = 2.1, moments = 84 *****
+
+Para             Mode
+varphi             4.190
+sigma_c            0.987
+h                  0.682
+xi_w               0.634
+sigma_l            0.188
+xi_p               0.497
+iota_w             0.562
+iota_p             0.360
+psi                0.671
+Phi                1.247
+r_pi               1.216
+rho                0.659
+r_y                0.000
+r_delta_y          0.091
+pi_bar             0.696
+beta_hat           0.411
+l_bar              2.291
+gamma_bar          0.407
+alpha              0.223
+rho_a              0.935
+rho_b              0.509
+rho_g              0.550
+rho_i              0.846
+rho_r              0.365
+rho_p              0.551
+rho_w              0.897
+rho_ga             0.454
+mu_p               0.484
+mu_w               0.540
+sigma_a            0.434
+sigma_b            0.086
+sigma_g            0.321
+sigma_i            0.101
+sigma_r            0.082
+sigma_p            0.121
+sigma_w            0.062
+
+Best posterior kernel found  =  147.639
+
+Excuted on 16-Jun-2022 14:49:01
+
+***** Model = BMM, mdof = 2.1, moments = 84 *****
+
+Number of draws = 10000 after 1000 burn-in
+Elapsed time = 01:19:11:17 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+varphi             3.205         [1.436, 4.851]        37.0
+sigma_c            1.048         [0.763, 1.275]        124.0
+h                  0.633         [0.497, 0.769]        35.8
+xi_w               0.667         [0.495, 0.832]        67.6
+sigma_l            0.413         [0.000, 1.033]        29.2
+xi_p               0.483         [0.350, 0.633]        29.2
+iota_w             0.580         [0.368, 0.805]        5.2
+iota_p             0.399         [0.165, 0.610]        7.2
+psi                0.676         [0.516, 0.846]        10.2
+Phi                1.250         [1.111, 1.395]        23.4
+r_pi               1.516         [1.113, 1.833]        49.9
+rho                0.699         [0.612, 0.813]        18.9
+r_y                0.086         [0.001, 0.165]        117.0
+r_delta_y          0.112         [0.036, 0.184]        5.9
+pi_bar             0.683         [0.631, 0.729]        13.7
+beta_hat           0.357         [0.228, 0.493]        112.9
+l_bar              2.367         [2.056, 2.668]        31.6
+gamma_bar          0.414         [0.374, 0.454]        25.9
+alpha              0.228         [0.169, 0.284]        64.5
+rho_a              0.798         [0.641, 0.976]        72.6
+rho_b              0.580         [0.344, 0.957]        97.2
+rho_g              0.391         [0.152, 0.602]        28.4
+rho_i              0.778         [0.580, 0.993]        100.3
+rho_r              0.439         [0.165, 0.715]        17.3
+rho_p              0.459         [0.165, 0.719]        6.6
+rho_w              0.669         [0.394, 0.970]        144.7
+rho_ga             0.434         [0.274, 0.599]        24.6
+mu_p               0.520         [0.209, 0.795]        5.9
+mu_w               0.476         [0.135, 0.790]        17.8
+sigma_a            0.438         [0.335, 0.533]        30.0
+sigma_b            0.118         [0.049, 0.196]        27.9
+sigma_g            0.291         [0.240, 0.352]        36.1
+sigma_i            0.160         [0.081, 0.237]        33.2
+sigma_r            0.090         [0.050, 0.128]        13.4
+sigma_p            0.127         [0.079, 0.175]        17.9
+sigma_w            0.075         [0.040, 0.104]        13.9
+
+Overall rejection rate (non-sv)  =  44.3 %
+Recycle rejection rate (non-sv)  =  56.6 %
+Average number of blocks (non-sv)  =  8.0
+Average inefficiency factor (all)  =  41.6
+
+Excuted on 16-Jun-2022 14:57:03
+
+***** Model = BMM, mdof = 2.1, moments = 84 *****
+
+Para             Mode
+varphi             5.186
+sigma_c            1.006
+h                  0.736
+xi_w               0.697
+sigma_l            0.000
+xi_p               0.510
+iota_w             0.554
+iota_p             0.423
+psi                0.746
+Phi                1.253
+r_pi               1.378
+rho                0.666
+r_y                0.023
+r_delta_y          0.083
+pi_bar             0.689
+beta_hat           0.404
+l_bar              2.331
+gamma_bar          0.403
+alpha              0.236
+rho_a              0.929
+rho_b              0.497
+rho_g              0.534
+rho_i              0.921
+rho_r              0.428
+rho_p              0.545
+rho_w              0.842
+rho_ga             0.464
+mu_p               0.446
+mu_w               0.545
+sigma_a            0.444
+sigma_b            0.086
+sigma_g            0.325
+sigma_i            0.086
+sigma_r            0.089
+sigma_p            0.114
+sigma_w            0.057
+
+Best posterior kernel found  =  146.100
+
+Excuted on 17-Jun-2022 13:24:59
+
+***** Model = BMM, mdof = 2.1, moments = 84 *****
+
+Para             Mode
+varphi             1.517
+sigma_c            0.968
+h                  0.575
+xi_w               0.652
+sigma_l            0.935
+xi_p               0.496
+iota_w             0.614
+iota_p             0.384
+psi                0.610
+Phi                1.182
+r_pi               1.487
+rho                0.667
+r_y                0.000
+r_delta_y          0.131
+pi_bar             0.670
+beta_hat           0.426
+l_bar              2.555
+gamma_bar          0.413
+alpha              0.211
+rho_a              0.645
+rho_b              0.495
+rho_g              0.441
+rho_i              0.786
+rho_r              0.482
+rho_p              0.509
+rho_w              0.868
+rho_ga             0.386
+mu_p               0.579
+mu_w               0.373
+sigma_a            0.481
+sigma_b            0.085
+sigma_g            0.308
+sigma_i            0.125
+sigma_r            0.071
+sigma_p            0.114
+sigma_w            0.059
+
+Best posterior kernel found  =  144.249
+
+Excuted on 17-Jun-2022 13:31:57
+
+***** Model = BMM, mdof = 2.1, moments = 84 *****
+
+Para             Mode
+varphi             4.689
+sigma_c            0.982
+h                  0.741
+xi_w               0.764
+sigma_l            0.539
+xi_p               0.491
+iota_w             0.497
+iota_p             0.286
+psi                0.666
+Phi                1.279
+r_pi               1.263
+rho                0.649
+r_y                0.000
+r_delta_y          0.087
+pi_bar             0.698
+beta_hat           0.414
+l_bar              2.304
+gamma_bar          0.400
+alpha              0.231
+rho_a              0.944
+rho_b              0.494
+rho_g              0.553
+rho_i              0.829
+rho_r              0.509
+rho_p              0.586
+rho_w              0.855
+rho_ga             0.447
+mu_p               0.463
+mu_w               0.592
+sigma_a            0.421
+sigma_b            0.083
+sigma_g            0.323
+sigma_i            0.105
+sigma_r            0.076
+sigma_p            0.122
+sigma_w            0.058
+
+Best posterior kernel found  =  145.554
+
+Excuted on 18-Jun-2022 19:44:39
+
+***** Model = BMM, mdof = 5.0, moments = 84 *****
+
+Para             Mode
+varphi             3.538
+sigma_c            1.141
+h                  0.592
+xi_w               0.610
+sigma_l            0.000
+xi_p               0.522
+iota_w             0.556
+iota_p             0.415
+psi                0.652
+Phi                1.276
+r_pi               1.517
+rho                0.685
+r_y                0.119
+r_delta_y          0.104
+pi_bar             0.686
+beta_hat           0.308
+l_bar              2.339
+gamma_bar          0.399
+alpha              0.259
+rho_a              0.861
+rho_b              0.474
+rho_g              0.380
+rho_i              0.946
+rho_r              0.567
+rho_p              0.516
+rho_w              0.752
+rho_ga             0.425
+mu_p               0.460
+mu_w               0.375
+sigma_a            0.454
+sigma_b            0.081
+sigma_g            0.285
+sigma_i            0.140
+sigma_r            0.080
+sigma_p            0.129
+sigma_w            0.069
+
+Best posterior kernel found  =  121.326
+

@@ -14,6 +14,6 @@ module load MATLAB
 
 # Execute jobs in parallel
 
-srun -N 1 -n 1 matlab -nodisplay -nosplash -r "test_bmm(1)" &
-srun -N 1 -n 1 matlab -nodisplay -nosplash -r "test_bmm(2)" &
+srun -N 1 -n 1 matlab -nodisplay -nosplash -r "sw07_bmm(1)" &
+srun -N 1 -n 1 matlab -nodisplay -nosplash -r "sw07_bmm(2)" &
 wait
