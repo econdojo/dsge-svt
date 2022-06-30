@@ -55,7 +55,7 @@ for iter = 1:M
     if isinf(sdof)
         lamb = ones(1,T);
     else
-        lamb = chain_lamb(iter,:); %#ok<NODEF>
+        lamb = chain_lamb(iter,:); %#ok<USENS>
     end
     
     if isempty(P.mod.svp)
@@ -65,7 +65,7 @@ for iter = 1:M
         SSR.B = zeros(V.mod.nshock);
         SSR.A = zeros(V.mod.nshock,1);
     else
-        log_vol = chain_h(:,:,iter); %#ok<NODEF>
+        log_vol = chain_h(:,:,iter); %#ok<USENS>
         Sigma_e = exp(para(P.mod.svp_ss));
         SSR.Sigma_e = exp(log_vol)./repmat(lamb,V.mod.nshock,1);
         SSR.Sigma_v = para(P.mod.svp_vv);

@@ -59,28 +59,28 @@ else
     % Choose model type
     switch spec.mod
         case 'dsge'
-            % Stochastic volatility
-            T = length(spec.lamb);
+            % Constant/stochastic volatility
             SSR.sdof = spec.sdof;
             SSR.sv = spec.sv;
+            T = length(spec.lamb);
             if isempty(P.mod.svp)
                 Sigma_e = para(P.mod.svp_ss).^2;
-                SSR.Sigma_e = repmat(Sigma_e,1,T)./repmat(spec.lamb,V.mod.nshock,1);
                 SSR.Sigma_v = zeros(V.mod.nshock,1);
                 SSR.B = zeros(V.mod.nshock);
                 SSR.A = zeros(V.mod.nshock,1);
+                SSR.Sigma_e = repmat(Sigma_e,1,T)./repmat(spec.lamb,V.mod.nshock,1);
             else
                 Sigma_e = exp(para(P.mod.svp_ss));
+                SSR.Sigma_v = para(P.mod.svp_vv);
+                SSR.B = diag(para(P.mod.svp_ar));
+                SSR.A = (eye(V.mod.nshock)-SSR.B)*para(P.mod.svp_ss);
                 if SSR.sv || spec.homo
                     SSR.Sigma_e = repmat(Sigma_e,1,T);
                 else
                     SSR.Sigma_e = exp(spec.h)./repmat(spec.lamb,V.mod.nshock,1);
                 end
-                SSR.Sigma_v = para(P.mod.svp_vv);
-                SSR.B = diag(para(P.mod.svp_ar));
-                SSR.A = (eye(V.mod.nshock)-SSR.B)*para(P.mod.svp_ss);
             end
-
+            
             % Conventional/mixture Kalman filter
             fs = (eye(V.mod.nvar)-SSR.G)\SSR.C;
             Omega_fs = dlyap_sym(SSR.G,SSR.M*diag(Sigma_e)*SSR.M',1);
@@ -94,8 +94,7 @@ else
         case 'bmm'
             % BMM log pseudo-likelihood
             SSR.Sigma_e = para(P.mod.svp_ss).^2;
-            [E_y,E_yy] = Moment(SSR,spec.nlag);
-            loglik = BMMLik_mex(E_y,E_yy,spec.mdof,para,data);
+            loglik = BMMLik(SSR,spec.nlag,spec.mdof,para,data);
     end
     
     % Compute (-)log posterior kernel density

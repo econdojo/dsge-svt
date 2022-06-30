@@ -8,10 +8,6 @@ function loglik = VARLik(SSR,prior,nlag,data)
 % Format:     loglik = VARLik(SSR,prior,nlag,data)
 %
 % Input:      SSR       state space representation (structure)
-%
-%                       s(t) = C + G*s(t-1) + M*e(t), E[ee'] = Sigma_e(t) (diagonal)
-%                       y(t) = D + Z*s(t) + u(t), E[uu'] = Sigma_u (diagonal)
-%
 %             prior     DSGE prior weight
 %             nlag      number of VAR lags
 %             data      structure with VAR data matrices
@@ -30,12 +26,12 @@ function loglik = VARLik(SSR,prior,nlag,data)
 k = 1+n*nlag;                     % number of regressors
 
 % Assemble DSGE population moments
-[E_y,E_yy_k] = Moment(SSR,nlag);
-E_yx = [E_y reshape(E_yy_k(:,:,2:end),n,n*nlag)];
+[E_y,E_yy] = Moment(SSR,nlag);
+E_yx = [E_y reshape(E_yy(:,:,2:end),n,n*nlag)];
 E_xx = zeros(n*nlag);
 for i = 1:nlag
     for j = i:nlag
-        E_xx(((i-1)*n+1):(i*n),((j-1)*n+1):(j*n)) = E_yy_k(:,:,j-i+1);
+        E_xx(((i-1)*n+1):(i*n),((j-1)*n+1):(j*n)) = E_yy(:,:,j-i+1);
     end
 end
 E_xx = triu(E_xx)+triu(E_xx,1)';
@@ -49,7 +45,7 @@ if indef
 else
     % VAR prior MLE
     Phi_prior = E_xx\E_yx';
-    E_uu_prior = E_yy_k(:,:,1)-E_yx*Phi_prior;
+    E_uu_prior = E_yy(:,:,1)-E_yx*Phi_prior;
     
     % DSGE log marginal likelihood
     if isinf(prior)               % VAR approx of DSGE
@@ -58,7 +54,7 @@ else
     else
         % VAR posterior MLE
         Phi_post = (prior*T*E_xx+data.X'*data.X)\(prior*T*E_yx'+data.X'*data.Y);
-        E_uu_post = (prior*T*E_yy_k(:,:,1)+data.Y'*data.Y-(prior*T*E_yx+data.Y'*data.X)*Phi_post)/((prior+1)*T);
+        E_uu_post = (prior*T*E_yy(:,:,1)+data.Y'*data.Y-(prior*T*E_yx+data.Y'*data.X)*Phi_post)/((prior+1)*T);
         
         ld1 = logdet(prior*T*E_xx+data.X'*data.X,'chol');
         ld2 = logdet((prior+1)*T*E_uu_post,'chol');

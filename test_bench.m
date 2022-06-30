@@ -22,7 +22,7 @@ clc
 
 % Set path
 modpath = ['user' filesep 'as07'];
-datpath = ['user' filesep 'as07' filesep 'data.txt'];
+%datpath = ['user' filesep 'as07' filesep 'data.txt'];
 savepath = ['user' filesep 'as07'];
 addpath(genpath('utils'),genpath('mex'),modpath);
 
@@ -30,7 +30,7 @@ addpath(genpath('utils'),genpath('mex'),modpath);
 %load([savepath filesep 'chain_init.mat'],'xopt','pid')% load post mode
 %load([savepath filesep 'tarb_full.mat'],'stat')  % load post mean
 [P,V] = ParVar;                   % load parameters & variables
-Y = importdata(datpath);          % import data
+%Y = importdata(datpath);          % import data
 %P.mod.para(pid) = xopt';
 %P.mod.para(P.mod.svp) = stat(P.mod.svp,1);
 para = P.mod.para;
@@ -53,8 +53,8 @@ SSR.D = D;
 fprintf('Existence  =  %d,  Uniqueness  =  %d\n',eu(1),eu(2));
 
 % Stochastic volatility
-T = 200;                    % number of periods
-SSR.sdof = 5;                   % Student-t degrees of freedom
+T = 200;                          % number of periods
+SSR.sdof = 15;                    % Student-t degrees of freedom
 SSR.sv = ~isempty(P.mod.svp);     % stochastic volatility
 if isempty(P.mod.svp)
     Sigma_e = para(P.mod.svp_ss).^2;
@@ -74,9 +74,11 @@ SSR.Sigma_e = repmat(Sigma_e,1,T);
 % irfplot(SSR,plotvar,V,80);        % execute plot
 
 % Simulate data
+s = rng;
 rng(2311);                        % repeatable random number generation
 [Y,~] = SimuData(SSR,T);
 dlmwrite([savepath filesep 'simu_data.txt'],Y,'delimiter','\t','precision',10);
+rng(s);
 
 %% -------------------------------------------
 %           Likelihood Evaluation

@@ -30,9 +30,9 @@ load([spec.savepath filesep 'tarb_full.mat'],'stat')  % load post mean
 [P,V] = ParVar;                             % load parameters & variables
 data.Y = importdata(spec.datpath);          % import data
 data.Y = data.Y((spec.datrange(1)+1):(end-spec.datrange(2)),:);
-T = size(data.Y,1);                         % time span
-sdof = spec.sdof; spec.sdof = Inf;          % shock t degrees of freedom
+sdof = spec.sdof; spec.sdof = Inf;          % shock degrees of freedom
 sv = ~isempty(P.mod.svp); spec.sv = false;  % stochastic volatility
+T = size(data.Y,1);                         % time span
 P.mod.para(pid) = xopt';                    % always most current draw
 P.mod.para(P.mod.svp) = stat(P.mod.svp,1);
 B = length(blk_fix);                        % number of fixed blocks

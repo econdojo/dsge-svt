@@ -20,9 +20,9 @@ function find_mode(spec)
 [P,V] = ParVar;                        % load parameters & variables
 data.Y = importdata(spec.datpath);     % import data
 data.Y = data.Y((spec.datrange(1)+1):(end-spec.datrange(2)),:);
-[T,n] = size(data.Y);                  % time span & number of data variables
-sdof = spec.sdof; spec.sdof = Inf;     % shock t degrees of freedom
+sdof = spec.sdof; spec.sdof = Inf;     % shock degrees of freedom
 sv = ~isempty(P.mod.svp); spec.sv = false;  % stochastic volatility
+[T,n] = size(data.Y);                  % time span & number of data variables
 pid = P.mod.cvp;                       % parameter indices
 
 % Check validity of inputs
@@ -30,7 +30,7 @@ if spec.chi<0
     error('Optimization tuning parameter < 0.')
 elseif spec.nopt<1
     error('Number of optimizations < 1.')
-elseif sdof<=2
+elseif spec.sdof<=2
     error('Student-t degrees of freedom <= 2.')
 elseif spec.prior<(1+n*spec.nlag+n)/(T-spec.nlag) && strcmp(spec.mod,'var')
     error('DSGE prior weight < lower bound.')

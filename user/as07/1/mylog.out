@@ -1,0 +1,239 @@
+Excuted on 25-Jun-2022 10:52:41
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Para             Mode
+tau              2.094
+kappa            0.144
+psi_1            1.526
+psi_2            0.623
+r_A              0.442
+pi_A             3.986
+gamma_Q          0.511
+rho_R            0.561
+rho_G            0.912
+rho_Z            0.630
+mu_R             -1.206
+mu_G             -1.482
+mu_Z             -1.105
+
+Best posterior kernel found  =  -613.841
+
+Excuted on 25-Jun-2022 12:09:43
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Number of draws = 10000 after 1000 burn-in
+Elapsed time = 00:01:16:31 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+tau              2.135         [1.677, 2.596]        8.0
+kappa            0.139         [0.117, 0.159]        6.8
+psi_1            1.572         [1.165, 1.956]        2.2
+psi_2            0.768         [0.323, 1.138]        10.7
+r_A              0.497         [0.210, 0.781]        6.4
+pi_A             3.985         [3.942, 4.030]        5.8
+gamma_Q          0.470         [0.365, 0.581]        5.2
+rho_R            0.599         [0.526, 0.669]        10.1
+rho_G            0.932         [0.894, 0.973]        2.3
+rho_Z            0.661         [0.614, 0.705]        10.4
+mu_R             -1.805         [-2.348, -1.315]        3.0
+mu_G             -1.822         [-2.266, -1.390]        2.7
+mu_Z             -1.559         [-1.937, -1.144]        4.9
+phi_R            0.939         [0.899, 0.982]        3.8
+phi_G            0.938         [0.898, 0.984]        3.6
+phi_Z            0.922         [0.870, 0.977]        4.9
+sig2_R           0.089         [0.023, 0.157]        8.8
+sig2_G           0.065         [0.014, 0.115]        9.3
+sig2_Z           0.049         [0.010, 0.087]        9.6
+
+Overall rejection rate (non-sv)  =  33.6 %
+Recycle rejection rate (non-sv)  =  50.7 %
+Average number of blocks (non-sv)  =  2.8
+Average inefficiency factor (all)  =  6.2
+
+Excuted on 27-Jun-2022 22:19:21
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Para             Mode
+tau              2.096
+kappa            0.144
+psi_1            1.523
+psi_2            0.622
+r_A              0.444
+pi_A             3.986
+gamma_Q          0.511
+rho_R            0.561
+rho_G            0.912
+rho_Z            0.631
+mu_R             -1.207
+mu_G             -1.481
+mu_Z             -1.105
+
+Best posterior kernel found  =  -613.841
+Computing Hessian at posterior mode... Done!
+
+Excuted on 27-Jun-2022 22:27:12
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Para             Mode
+tau              2.092
+kappa            0.144
+psi_1            1.526
+psi_2            0.623
+r_A              0.440
+pi_A             3.987
+gamma_Q          0.512
+rho_R            0.560
+rho_G            0.912
+rho_Z            0.630
+mu_R             -1.206
+mu_G             -1.481
+mu_Z             -1.106
+
+Best posterior kernel found  =  -613.841
+Computing Hessian at posterior mode... Done!
+
+Excuted on 27-Jun-2022 22:35:21
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Number of draws = 1000 after 100 burn-in
+Elapsed time = 00:00:07:32 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+tau              2.121         [1.685, 2.551]        6.1
+kappa            0.140         [0.121, 0.162]        9.5
+psi_1            1.593         [1.167, 1.962]        2.0
+psi_2            0.721         [0.290, 1.063]        7.4
+r_A              0.524         [0.172, 0.794]        6.5
+pi_A             3.981         [3.937, 4.031]        6.1
+gamma_Q          0.463         [0.362, 0.574]        5.5
+rho_R            0.591         [0.528, 0.633]        13.0
+rho_G            0.935         [0.898, 0.974]        2.5
+rho_Z            0.656         [0.620, 0.685]        10.6
+mu_R             -1.781         [-2.316, -1.356]        3.5
+mu_G             -1.821         [-2.256, -1.354]        3.8
+mu_Z             -1.601         [-2.065, -1.178]        8.2
+phi_R            0.936         [0.892, 0.980]        5.2
+phi_G            0.941         [0.902, 0.983]        3.1
+phi_Z            0.919         [0.874, 0.979]        6.0
+sig2_R           0.101         [0.015, 0.161]        12.2
+sig2_G           0.066         [0.018, 0.120]        8.8
+sig2_Z           0.053         [0.014, 0.119]        19.0
+
+Overall rejection rate (non-sv)  =  34.4 %
+Recycle rejection rate (non-sv)  =  49.2 %
+Average number of blocks (non-sv)  =  2.9
+Average inefficiency factor (all)  =  7.3
+
+Excuted on 29-Jun-2022 00:31:02
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Para             Mode
+tau              2.091
+kappa            0.144
+psi_1            1.526
+psi_2            0.622
+r_A              0.440
+pi_A             3.987
+gamma_Q          0.512
+rho_R            0.560
+rho_G            0.912
+rho_Z            0.630
+mu_R             -1.206
+mu_G             -1.481
+mu_Z             -1.106
+
+Best posterior kernel found  =  -613.841
+
+Excuted on 29-Jun-2022 21:07:10
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Para             Mode
+tau              2.093
+kappa            0.144
+psi_1            1.523
+psi_2            0.622
+r_A              0.441
+pi_A             3.987
+gamma_Q          0.512
+rho_R            0.560
+rho_G            0.912
+rho_Z            0.630
+mu_R             -1.207
+mu_G             -1.481
+mu_Z             -1.105
+
+Best posterior kernel found  =  -613.841
+
+Excuted on 29-Jun-2022 21:15:32
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Number of draws = 1000 after 100 burn-in
+Elapsed time = 00:00:07:51 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+tau              2.110         [1.605, 2.543]        11.3
+kappa            0.140         [0.119, 0.164]        6.4
+psi_1            1.568         [1.227, 2.021]        2.0
+psi_2            0.759         [0.375, 1.246]        10.3
+r_A              0.551         [0.262, 0.975]        10.1
+pi_A             3.977         [3.914, 4.023]        8.3
+gamma_Q          0.458         [0.339, 0.580]        6.5
+rho_R            0.594         [0.536, 0.656]        5.6
+rho_G            0.932         [0.893, 0.972]        3.0
+rho_Z            0.657         [0.617, 0.694]        5.6
+mu_R             -1.780         [-2.229, -1.313]        2.9
+mu_G             -1.800         [-2.187, -1.388]        2.1
+mu_Z             -1.533         [-1.934, -1.157]        3.1
+phi_R            0.938         [0.900, 0.986]        3.2
+phi_G            0.932         [0.887, 0.977]        6.0
+phi_Z            0.921         [0.872, 0.976]        3.0
+sig2_R           0.085         [0.018, 0.155]        8.9
+sig2_G           0.074         [0.015, 0.142]        10.3
+sig2_Z           0.048         [0.010, 0.092]        10.6
+
+Overall rejection rate (non-sv)  =  33.5 %
+Recycle rejection rate (non-sv)  =  51.1 %
+Average number of blocks (non-sv)  =  2.8
+Average inefficiency factor (all)  =  6.3
+
+Excuted on 29-Jun-2022 21:16:04
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Para             Mode
+tau              2.036
+kappa            0.140
+psi_1            1.530
+psi_2            0.800
+r_A              0.463
+pi_A             3.990
+gamma_Q          0.478
+rho_R            0.592
+rho_G            0.929
+rho_Z            0.654
+
+Best posterior kernel found  =  -482.248
+
+Excuted on 29-Jun-2022 21:24:20
+
+***** Model = DSGE, sdof = 15.0, sv = true *****
+
+Number of draws = 1000 after 100 burn-in
+Elapsed time = 00:00:08:15 [dd:hh:mm:ss]
+
+Block No.     Overall     Recycle     Indices
+Block: 1      32.9 %      51.6 %      (6,3,2,4)
+Block: 2      30.5 %      48.4 %      (9,8,7)
+Block: 3      24.4 %      39.2 %      (1,10,5)
+
+Computing posterior kernel at point of evaluation...
+Log marginal likelihood  =  -598.92 (n.s.e. 0.3096)
+

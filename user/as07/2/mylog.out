@@ -1,0 +1,270 @@
+Excuted on 25-Jun-2022 09:51:58
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Para             Mode
+tau              1.908
+kappa            0.127
+psi_1            1.463
+psi_2            0.385
+r_A              0.375
+pi_A             4.008
+gamma_Q          0.387
+rho_R            0.548
+rho_G            0.846
+rho_Z            0.641
+sigma_R          0.370
+sigma_G          0.364
+sigma_Z          0.378
+
+Best posterior kernel found  =  1.782
+
+Excuted on 25-Jun-2022 10:45:55
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Number of draws = 10000 after 1000 burn-in
+Elapsed time = 00:00:53:27 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+tau              1.995         [1.559, 2.389]        4.8
+kappa            0.152         [0.057, 0.238]        3.9
+psi_1            1.498         [1.159, 1.833]        2.2
+psi_2            0.491         [0.138, 0.835]        4.0
+r_A              0.459         [0.127, 0.763]        4.0
+pi_A             4.000         [3.877, 4.126]        2.7
+gamma_Q          0.404         [0.166, 0.660]        2.5
+rho_R            0.475         [0.245, 0.712]        4.6
+rho_G            0.817         [0.686, 0.971]        2.3
+rho_Z            0.574         [0.438, 0.716]        8.2
+sigma_R          0.379         [0.224, 0.532]        2.6
+sigma_G          0.381         [0.225, 0.529]        2.2
+sigma_Z          0.403         [0.224, 0.577]        2.5
+
+Overall rejection rate (non-sv)  =  38.2 %
+Recycle rejection rate (non-sv)  =  44.4 %
+Average number of blocks (non-sv)  =  3.4
+Average inefficiency factor (all)  =  3.6
+
+Excuted on 28-Jun-2022 22:13:16
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Para             Mode
+tau              1.932
+kappa            0.131
+psi_1            1.464
+psi_2            0.392
+r_A              0.376
+pi_A             4.008
+gamma_Q          0.402
+rho_R            0.540
+rho_G            0.847
+rho_Z            0.633
+mu_R             -1.992
+mu_G             -2.004
+mu_Z             -1.976
+phi_R            0.924
+phi_G            0.924
+phi_Z            0.925
+sig2_R           0.017
+sig2_G           0.017
+sig2_Z           0.017
+
+Best posterior kernel found  =  14.435
+
+Excuted on 28-Jun-2022 22:20:49
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Number of draws = 1000 after 100 burn-in
+Elapsed time = 00:00:07:03 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+tau              2.069         [1.381, 2.750]        4.6
+kappa            0.153         [0.068, 0.231]        7.9
+psi_1            1.555         [1.239, 1.942]        3.0
+psi_2            0.507         [0.162, 0.878]        4.2
+r_A              0.462         [0.178, 0.808]        4.7
+pi_A             3.988         [3.822, 4.109]        4.6
+gamma_Q          0.404         [0.135, 0.633]        4.7
+rho_R            0.474         [0.242, 0.701]        6.9
+rho_G            0.813         [0.683, 0.962]        3.7
+rho_Z            0.573         [0.442, 0.697]        8.0
+mu_R             -2.161         [-2.853, -1.341]        4.9
+mu_G             -2.112         [-2.641, -1.491]        3.1
+mu_Z             -2.061         [-2.674, -1.283]        10.6
+phi_R            0.905         [0.832, 0.969]        3.3
+phi_G            0.902         [0.822, 0.977]        5.1
+phi_Z            0.908         [0.852, 0.979]        4.6
+sig2_R           0.023         [0.011, 0.043]        39.2
+sig2_G           0.026         [0.011, 0.052]        18.9
+sig2_Z           0.027         [0.011, 0.049]        8.7
+
+Overall rejection rate (non-sv)  =  48.5 %
+Recycle rejection rate (non-sv)  =  50.4 %
+Average number of blocks (non-sv)  =  4.6
+Average inefficiency factor (all)  =  7.9
+
+Excuted on 28-Jun-2022 22:23:23
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Para             Mode
+tau              1.929
+kappa            0.133
+psi_1            1.466
+psi_2            0.389
+r_A              0.378
+pi_A             4.007
+gamma_Q          0.396
+rho_R            0.549
+rho_G            0.847
+rho_Z            0.636
+mu_R             -1.980
+mu_G             -2.006
+mu_Z             -1.974
+phi_R            0.924
+phi_G            0.924
+phi_Z            0.924
+sig2_R           0.017
+sig2_G           0.017
+sig2_Z           0.017
+
+Best posterior kernel found  =  14.416
+
+Excuted on 28-Jun-2022 22:38:39
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Number of draws = 1000 after 100 burn-in
+Elapsed time = 00:00:14:45 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+tau              2.039         [1.453, 2.679]        5.1
+kappa            0.153         [0.047, 0.225]        8.9
+psi_1            1.522         [1.183, 1.939]        3.1
+psi_2            0.500         [0.165, 0.834]        4.1
+r_A              0.472         [0.171, 0.765]        3.8
+pi_A             3.993         [3.876, 4.123]        3.8
+gamma_Q          0.417         [0.170, 0.712]        4.0
+rho_R            0.482         [0.274, 0.766]        13.6
+rho_G            0.811         [0.669, 0.961]        3.3
+rho_Z            0.578         [0.385, 0.710]        20.3
+mu_R             -2.093         [-2.705, -1.511]        3.6
+mu_G             -2.123         [-2.837, -1.457]        7.7
+mu_Z             -2.341         [-3.695, -1.434]        46.9
+phi_R            0.900         [0.811, 0.972]        3.9
+phi_G            0.900         [0.831, 0.961]        3.6
+phi_Z            0.906         [0.836, 0.975]        4.4
+sig2_R           0.029         [0.011, 0.059]        39.8
+sig2_G           0.027         [0.010, 0.051]        14.3
+sig2_Z           0.025         [0.007, 0.039]        5.8
+
+Overall rejection rate (non-sv)  =  50.5 %
+Recycle rejection rate (non-sv)  =  53.9 %
+Average number of blocks (non-sv)  =  4.5
+Average inefficiency factor (all)  =  10.5
+
+Excuted on 29-Jun-2022 21:26:57
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Para             Mode
+tau              2.099
+kappa            0.269
+psi_1            1.540
+psi_2            0.676
+r_A              0.400
+pi_A             4.044
+gamma_Q          0.535
+rho_R            0.295
+rho_G            0.890
+rho_Z            0.490
+
+Best posterior kernel found  =  -29.681
+
+Excuted on 29-Jun-2022 21:29:45
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Para             Mode
+tau              1.911
+kappa            0.127
+psi_1            1.465
+psi_2            0.384
+r_A              0.374
+pi_A             4.008
+gamma_Q          0.389
+rho_R            0.549
+rho_G            0.846
+rho_Z            0.641
+sigma_R          0.369
+sigma_G          0.364
+sigma_Z          0.379
+
+Best posterior kernel found  =  1.782
+
+Excuted on 29-Jun-2022 21:35:28
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Number of draws = 1000 after 100 burn-in
+Elapsed time = 00:00:05:13 [dd:hh:mm:ss]
+
+Para             Mean          90% Interval          Ineff
+tau              2.042         [1.286, 2.732]        2.4
+kappa            0.151         [0.063, 0.238]        4.0
+psi_1            1.519         [1.164, 1.912]        2.0
+psi_2            0.515         [0.235, 1.016]        7.8
+r_A              0.456         [0.088, 0.750]        3.8
+pi_A             4.000         [3.873, 4.126]        7.0
+gamma_Q          0.418         [0.185, 0.665]        3.2
+rho_R            0.471         [0.281, 0.730]        5.5
+rho_G            0.814         [0.667, 0.960]        2.8
+rho_Z            0.573         [0.458, 0.717]        11.1
+sigma_R          0.398         [0.241, 0.577]        5.3
+sigma_G          0.385         [0.245, 0.532]        2.8
+sigma_Z          0.393         [0.244, 0.542]        2.6
+
+Overall rejection rate (non-sv)  =  40.8 %
+Recycle rejection rate (non-sv)  =  44.8 %
+Average number of blocks (non-sv)  =  3.3
+Average inefficiency factor (all)  =  4.6
+
+Excuted on 29-Jun-2022 21:35:56
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Para             Mode
+tau              1.915
+kappa            0.128
+psi_1            1.463
+psi_2            0.384
+r_A              0.375
+pi_A             4.008
+gamma_Q          0.387
+rho_R            0.547
+rho_G            0.846
+rho_Z            0.641
+sigma_R          0.370
+sigma_G          0.364
+sigma_Z          0.378
+
+Best posterior kernel found  =  1.782
+
+Excuted on 29-Jun-2022 21:40:30
+
+***** Model = BMM, mdof = 5.0, moments = 18 *****
+
+Number of draws = 1000 after 100 burn-in
+Elapsed time = 00:00:04:34 [dd:hh:mm:ss]
+
+Block No.     Overall     Recycle     Indices
+Block: 1      38.6 %      44.1 %      (3,5,6,2,8)
+Block: 2      39.0 %      43.1 %      (7,11,10,12)
+Block: 3      34.3 %      41.8 %      (4,13,9,1)
+
+Computing posterior kernel at point of evaluation...
+Log marginal likelihood  =  -19.17 (n.s.e. 0.1720)
+

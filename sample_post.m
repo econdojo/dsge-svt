@@ -39,9 +39,9 @@ load([spec.savepath filesep 'chain_init.mat'],'xopt','Hopt','pid')   % load post
 [P,V] = ParVar;                             % load parameters & variables
 data.Y = importdata(spec.datpath);          % import data
 data.Y = data.Y((spec.datrange(1)+1):(end-spec.datrange(2)),:);
-T = size(data.Y,1);                         % time span
-sdof = spec.sdof; spec.sdof = Inf;          % shock t degrees of freedom
+sdof = spec.sdof; spec.sdof = Inf;          % shock degrees of freedom
 sv = ~isempty(P.mod.svp); spec.sv = false;  % stochastic volatility
+T = size(data.Y,1);                         % time span
 chain_para = zeros(spec.M,P.mod.npara);     % parameter markov chain
 P.mod.para(pid) = xopt';                    % always most current draw
 rej1 = 0;                                   % number of overall rejections

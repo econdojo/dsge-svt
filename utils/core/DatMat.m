@@ -33,17 +33,18 @@ switch mod
         E_y = zeros(n,1)-1;            % 1st-order moments
         E_yy = zeros(n,n,nlag+1)-1;    % 2nd-order raw moments
         user_bmm
-        M = [];
+        M = zeros(T,sum(E_y>=0)+sum(E_yy(:)>=0));
+        l = 1;
         for k = 1:n
             if E_y(k)>=0
-                M = cat(2,M,Y(nlag+1:end,k));
+                M(:,l) = Y(nlag+1:end,k); l = l+1;
             end
         end
         for k = 1:nlag+1
             for i = 1:n
                 for j = 1:n
                     if E_yy(i,j,k)>=0
-                        M = cat(2,M,Y(nlag+1:end,i).*Y(nlag+2-k:end+1-k,j));
+                        M(:,l) = Y(nlag+1:end,i).*Y(nlag+2-k:end+1-k,j); l = l+1;
                     end
                 end
             end

@@ -46,17 +46,17 @@ SSR.sdof = Inf;
 SSR.sv = false;
 if isempty(P.mod.svp)
     Sigma_e = para(P.mod.svp_ss).^2;
-    SSR.Sigma_e = repmat(Sigma_e,1,T)./repmat(spec.lamb,V.mod.nshock,1);
     SSR.Sigma_v = zeros(V.mod.nshock,1);
     SSR.B = zeros(V.mod.nshock);
     SSR.A = zeros(V.mod.nshock,1);
+    SSR.Sigma_e = repmat(Sigma_e,1,T)./repmat(spec.lamb,V.mod.nshock,1);
     spec.h = repmat(log(Sigma_e),1,T);
 else
     Sigma_e = exp(para(P.mod.svp_ss));
-    SSR.Sigma_e = exp(spec.h)./repmat(spec.lamb,V.mod.nshock,1);
     SSR.Sigma_v = para(P.mod.svp_vv);
     SSR.B = diag(para(P.mod.svp_ar));
     SSR.A = (eye(V.mod.nshock)-SSR.B)*para(P.mod.svp_ss);
+    SSR.Sigma_e = exp(spec.h)./repmat(spec.lamb,V.mod.nshock,1);
 end
 
 % Durbin-Koopman simulation smoother
