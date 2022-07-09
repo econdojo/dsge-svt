@@ -14,11 +14,11 @@ as07 = tarb(@tarb_spec,[],'modpath',modpath,'datpath',datpath,'savepath',savepat
 % OneFileToMexThemAll
 
 %% Sample prior
-sdof = 15;         % shock degrees of freedom
+sdof = Inf;         % shock degrees of freedom
 npd = 1000;        % number of prior draws
 T = 200;           % number of periods
 as07 = tarb(@tarb_spec,as07,'sdof',sdof,'npd',npd,'periods',T);   % update specification
-% tarb(@sample_prior,as07);
+tarb(@sample_prior,as07);
 
 %% MCMC (full run)
 sa_spec = optimoptions(@simulannealbnd,...  % simulated annealing
@@ -36,11 +36,11 @@ w = 0.5;           % tailoring frequency
 M = 1100;         % number of draws including burn-in
 N = 100;          % number of burn-in
 mdof = 5;
-nlag = 1;
+nlag = 4;
 as07 = tarb(@tarb_spec,as07,'sa',sa_spec,'cs',cs_spec,'npd',npd,'nopt',nopt,'prob',p,'freq',w,'draws',M,'burn',N,'mod',mod,'mdof',mdof,'nlag',nlag);
 tarb(@sample_post,as07);
 
 %% Marginal likelihood (reduced run)
-B = 3;             % number of blocks for structural parameters
-as07 = tarb(@tarb_spec,as07,'blocks',B);
-tarb(@marg_lik,as07);
+% B = 3;             % number of blocks for structural parameters
+% as07 = tarb(@tarb_spec,as07,'blocks',B);
+% tarb(@marg_lik,as07);

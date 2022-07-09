@@ -3,6 +3,7 @@ npara = 100;
 nvar = 100;
 nshock = 20;
 ndata = 20;
+nmmt = 500;
 period = 1000;
 
 %% Input types
@@ -51,29 +52,38 @@ R = coder.typeof(0,[1 period],[false true]);
 draw_S = coder.typeof(true);
 draw_R = coder.typeof(true);
 
-% %% mvt_rnd.m
-% fprintf('Generating mvt_rnd_mex... ');
-% codegen -d mex mvt_rnd -args {mu,Sigma,v,N}
-% movefile mvt_rnd_mex* mex
-% fprintf('Done!\n');
-% 
-% %% mvt_pdf.m
-% fprintf('Generating mvt_pdf_mex... ');
-% codegen -d mex mvt_pdf -args {x,mu,Sigma,v}
-% movefile mvt_pdf_mex* mex
-% fprintf('Done!\n');
-% 
-% %% qzdiv.m
-% fprintf('Generating qzdiv_mex... ');
-% codegen -d mex qzdiv -args {stake,A,B,Q,Z}
-% movefile qzdiv_mex* mex
-% fprintf('Done!\n');
-% 
-% %% MixKalman.m
-% fprintf('Generating MixKalman_mex... ');
-% codegen -d mex MixKalman -args {Y,SSR,fs_init,Omega_fs_init,N}
-% movefile MixKalman_mex* mex
-% fprintf('Done!\n');
+H = coder.typeof(0,[period nmmt],[true true]);
+nlag = coder.typeof(0);
+
+%% NeweyWest.m
+fprintf('Generating NeweyWest_mex... ');
+codegen -d mex NeweyWest -args {H,nlag}
+movefile NeweyWest_mex* mex
+fprintf('Done!\n');
+
+%% mvt_rnd.m
+fprintf('Generating mvt_rnd_mex... ');
+codegen -d mex mvt_rnd -args {mu,Sigma,v,N}
+movefile mvt_rnd_mex* mex
+fprintf('Done!\n');
+
+%% mvt_pdf.m
+fprintf('Generating mvt_pdf_mex... ');
+codegen -d mex mvt_pdf -args {x,mu,Sigma,v}
+movefile mvt_pdf_mex* mex
+fprintf('Done!\n');
+
+%% qzdiv.m
+fprintf('Generating qzdiv_mex... ');
+codegen -d mex qzdiv -args {stake,A,B,Q,Z}
+movefile qzdiv_mex* mex
+fprintf('Done!\n');
+
+%% MixKalman.m
+fprintf('Generating MixKalman_mex... ');
+codegen -d mex MixKalman -args {Y,SSR,fs_init,Omega_fs_init,N}
+movefile MixKalman_mex* mex
+fprintf('Done!\n');
 
 %% DistSmoother.m
 fprintf('Generating DistSmoother_mex... ');

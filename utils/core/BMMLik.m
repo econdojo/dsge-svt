@@ -22,7 +22,8 @@ function loglik = BMMLik(SSR,nlag,mdof,para,data)
 
 % Assemble DSGE population moments
 [E_y,E_yy] = Moment(SSR,nlag);
-M = zeros(1,length(data.M));
+[T,m] = size(data.M);
+M = zeros(1,m);
 n = length(E_y);
 l = 1;
 for k = 1:n
@@ -43,12 +44,13 @@ for k = 1:nlag+1
         end
     end
 end
+V = NeweyWest_mex(data.M-repmat(M,T,1),-1);
 
 % Evaluate Log Likelihood
 if isinf(mdof)
-    loglik = mvt_pdf(data.M,M,data.V,mdof);
+    loglik = mvt_pdf_mex(mean(data.M),M,V,mdof);
 else
-    loglik = mvt_pdf(data.M,M,(mdof-2)/mdof*data.V,mdof);
+    loglik = mvt_pdf_mex(mean(data.M),M,(mdof-2)/mdof*V,mdof);
 end
 
 %-------------------- END --------------------
